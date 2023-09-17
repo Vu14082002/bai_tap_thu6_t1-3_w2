@@ -89,20 +89,32 @@
 // xhr.send(json);
 
 // ////////////////////// Update a user
-var data = {
-    "name": "morpheus",
-    "job": "zion resident"
-}
-var json = JSON.stringify(data);
+// var data = {
+//     "name": "morpheus",
+//     "job": "zion resident"
+// }
+// var json = JSON.stringify(data);
+// var xhr = new XMLHttpRequest();
+// xhr.open("PUT", "https://reqres.in/api/users/2", true);
+// xhr.setRequestHeader('Content-type', 'application/json; charset = utf - 8 ');
+// xhr.onload = function() {
+//     var users = JSON.parse(xhr.responseText);
+//     if (xhr.readyState == 4 && xhr.status == "200") {
+//         console.table(users);
+//     } else {
+//         console.error(users);
+//     }
+// }
+// xhr.send(json);
+// Delete a user have id = 2
 var xhr = new XMLHttpRequest();
-xhr.open("PUT", "https://reqres.in/api/users/2", true);
-xhr.setRequestHeader('Content-type', 'application/json; charset = utf - 8 ');
-xhr.onload = function() {
-    var users = JSON.parse(xhr.responseText);
-    if (xhr.readyState == 4 && xhr.status == "200") {
-        console.table(users);
-    } else {
-        console.error(users);
-    }
-}
-xhr.send(json);
+xhr.open("DELETE", "https://jsonplaceholder.typicode.com/posts/1", true);
+xhr.onload = function () {
+  var users = JSON.parse(xhr.responseText);
+  if (xhr.readyState == 4 && xhr.status == "200") {
+    console.table(users);
+  } else {
+    console.error(users);
+  }
+};
+xhr.send(null);
